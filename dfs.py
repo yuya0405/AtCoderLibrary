@@ -1,4 +1,4 @@
-def dfs(node: int):
+def dfs(node):
     if visited[node]:
         return
     visited[node] = 1
