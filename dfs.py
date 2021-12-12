@@ -1,11 +1,12 @@
+# 自作関数
 def dfs(node):
     if visited[node]:
         return
     visited[node] = 1
  
-    for n_node in graph[node]:
-        if not visited[n_node]:
-            dfs(n_node)
+    for next_node in graph[node]:
+        if not visited[next_node]:
+            dfs(next_node)
     return
 
 # アルゴ式
