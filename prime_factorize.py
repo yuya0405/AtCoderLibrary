@@ -1,28 +1,34 @@
 # 素因数分解
-def prime_factorize(x):
-    # もしx=1ならば
-    if x==1:
-        # 1を返す
-        return [1]
-    # 素因数を格納するリスト
-    prime_list=[]
-    # i=2,3,4,...で試し割り
-    i=2
-    # i<=√xすなわちi*i<=xの範囲で試し割り
-    while i*i<=x:
-        # もしiで割り切れたら
-        if x%i==0:
-            # iを素因数に追加
-            prime_list.append(i)
-            # xをiで割る
-            x//=i
-        # iで割り切れなかったら
-        else:
-            # 次のiへ
-            i+=1
-    # 試し割りが終わった時xが1でなければ
-    if x!=1:
-        # 素因数にxを追加
-        prime_list.append(x)
-    # 素因数のリストを返す
-    return prime_list
+# 460 = 2^2 x 5 x 23 の場合
+# 返り値は [(2, 2), (5, 1), (23, 1)]
+def prime_factorize(N):
+    # 答えを表す可変長配列
+    res = []
+
+    # √N まで試し割っていく
+    for p in range(2, N):
+        # p * p <= N の範囲でよい
+        if p * p > N:
+            break
+
+        # N が p で割り切れないならばスキップ
+        if N % p != 0:
+            continue
+
+        # N の素因数 p に対する指数を求める
+        e = 0
+        while N % p == 0:
+            # 指数を 1 増やす
+            e += 1
+
+            # N を p で割る
+            N //= p
+
+        # 答えに追加
+        res.append((p, e))
+
+    # 素数が最後に残ることがありうる
+    if N != 1:
+        res.append((N, 1))
+
+    return res
