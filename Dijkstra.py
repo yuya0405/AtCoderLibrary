@@ -1,4 +1,4 @@
-from heapq import heappush, heappop
+ from heapq import heappush, heappop
 INF = 10 ** 9
 def dijkstra(s, n): # (始点, ノード数)
     dist = [INF] * n
