@@ -9,4 +9,5 @@ B = sorted(set(A))
 D = { v: i for i, v in enumerate(B) }
 
 # 答え
-print(list(map(lambda v: D[v], A)))
+for i in range(len(A)):
+    print (D[A[i]])
