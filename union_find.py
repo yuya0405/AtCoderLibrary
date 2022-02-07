@@ -1,3 +1,5 @@
+# 参考：ABC231D
+
 import sys
 sys.setrecursionlimit(10**7)
 
