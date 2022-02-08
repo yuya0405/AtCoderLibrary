@@ -26,7 +26,8 @@ def rec(v, p):
     # 各子頂点を探索
     for ch in chs[v]:
         # 子頂点 ch を根とした部分木を再帰的に探索
-        rec(ch, v)
+        if ch != p:
+            rec(ch, v)
 
 # 各頂点の子頂点リストを作る
 chs = [[] for v in range(N)]
