@@ -22,7 +22,7 @@ def dfs(v):
     print(v, end=" ")
 
     # 各子頂点を探索
-    for ch in chs:
+    for ch in chs[v]:
         # 子頂点 ch を根とした部分木を再帰的に探索
         dfs(ch)
 
