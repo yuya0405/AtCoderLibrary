@@ -12,8 +12,8 @@ def bfs(node):
     return d
 
 #アルゴ式
-# 最初の頂点集合 (スタートは頂点 0 のみ)
-nodes = [0]
+
+from queue import Queue
 
 # 各頂点が何手目に探索されたか
 # -1 は「まだ探索されていない」ことを表す
