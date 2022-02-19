@@ -1,6 +1,11 @@
-# cost[i][j]: 頂点v_iから頂点v_jへ到達するための辺コストの和
-for k in range(V):
-    for i in range(V):
-        for j in range(V):
-            if cost[i][k]!=INF and cost[k][j]!=INF:
-                cost[i][j] = min(cost[i][j], cost[i][k] + cost[k][j])
+INF = float('inf')
+cost = [[INF]*V for _ in range(V)]
+for v in range(V):
+    cost[v][v] = 0
+for s, t, d in STD:
+    cost[s][t] = d
+
+for i in range(V): # 中継点
+    for j in range(V): # 始点
+        for k in range(V): # 終点
+            cost[j][k] = min(cost[j][i]+cost[i][k], cost[j][k])
