@@ -14,8 +14,8 @@ class UnionFind():
     def root(self, x):
         if self.par[x] == -1: return x # x が根の場合は x を返す
         else:
-          self.par[x] = self.root(self.par[x]) # 経路圧縮
-          return self.par[x]
+            self.par[x] = self.root(self.par[x]) # 経路圧縮
+            return self.par[x]
 
     # x と y が同じグループに属するか (根が一致するか)
     def issame(self, x, y):
