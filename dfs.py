@@ -1,14 +1,3 @@
-# 自作関数
-def dfs(node):
-    if visited[node]:
-        return
-    visited[node] = 1
- 
-    for next_node in graph[node]:
-        if not visited[next_node]:
-            dfs(next_node)
-    return
-
 # アルゴ式
 
 # スタックオーバーフローを防ぐ
@@ -17,7 +6,7 @@ sys.setrecursionlimit(10 ** 6)
 
 # 頂点 v を根とする部分木を探索
 # 頂点 v の子頂点を格納した配列を chs とする
-def rec(v, p):
+def dfs(v, p):
     if v == 0:
         depth[v] = 0
     else:
@@ -27,7 +16,7 @@ def rec(v, p):
     for ch in chs[v]:
         # 子頂点 ch を根とした部分木を再帰的に探索
         if ch != p:
-            rec(ch, v)
+            dfs(ch, v)
 
 # 各頂点の子頂点リストを作る
 chs = [[] for v in range(N)]
@@ -41,7 +30,7 @@ for v in range(1, N):
 depth = [0] * N
 
 # 根頂点 (0) から再帰的に探索
-rec(0, -1)
+dfs(0, -1)
 
 for d in depth:
     print (d)
