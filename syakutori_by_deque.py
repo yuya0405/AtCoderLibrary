@@ -1,8 +1,5 @@
 from collections import deque
 
-N, Q = map(int, input().split())
-A = list(map(int, input().split()))
-
 que = deque()
 for a in A:
     que.append(a)  ## dequeの右端に要素を一つ追加する。
