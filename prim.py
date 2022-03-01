@@ -46,3 +46,11 @@ def prim():
 
             heappush(q, (c, j))
     return total
+
+G = [[] for _ in range(V)]
+for s, t, w in STW:
+    G[s].append((t, w)) 
+    G[t].append((s, w))
+
+total = prim()
+print (total)
