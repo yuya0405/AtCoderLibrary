@@ -39,3 +39,11 @@ class UnionFind():
     # x を含む根付き木のサイズを求める
     def size(self, x):
         return siz[root(x)]
+
+uf = UnionFind(N)
+for a, b in AB:
+    if uf.issame(a-1, b-1):
+        print("No")
+        exit()
+    else:
+        uf.unite(a-1, b-1)
