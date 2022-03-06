@@ -3,7 +3,6 @@
 
 import heapq
 
-
 class PriorityQueue:
     """
     優先度付きキュー
