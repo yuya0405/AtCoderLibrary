@@ -2,15 +2,15 @@
 
 class Node:
     def __init__(self, val):
-        val = self.val
-        next = None
-        prev = None
+        self.val = val
+        self.next = None
+        self.prev = None
 
 class DoublyLinkedList:
     def __init__(self):
-        head = None
-        tail = None
-        length = 0
+        self.head = None
+        self.tail = None
+        self.length = 0
         
     def push(self,val):
         newNode = Node(val)
